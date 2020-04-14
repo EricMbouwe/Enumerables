@@ -52,8 +52,8 @@ module Enumerable
         result = true if yield(value)
       elsif param.nil?
         result = true if value
-      else
-        result = true if param === value
+      elsif param === value
+        result = true
       end
     end
     result
@@ -66,8 +66,8 @@ module Enumerable
         result = false if yield(value)
       elsif param.nil?
         result = false if value
-      else
-        result = false if param === value
+      elsif param === value
+        result = false
       end
     end
     result
@@ -93,7 +93,8 @@ module Enumerable
     arr = []
     my_each do |item|
       if param
-        arr << param.call(item)
+        a = param.call(item)
+        return arr << a
       else
         arr << yield(item)
       end
