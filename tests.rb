@@ -6,16 +6,16 @@ arr = [1, 5, 74, 1, 87, 6, 97, 9]
 puts "\n"
 
 puts "my_each tests\n\n"
-puts 'Print each item of the array: '
+puts "Print each item of the array: \n\n"
 print 'arr.my_each #=> '
 arr.my_each { |item| print "#{item} " }
 puts "\n\n\n"
 
 puts "my_each_with_index tests\n\n"
 puts 'Print each index of the array: '
-print 'arr.my_each_with_index #=> '
-arr.my_each_with_index { |item, i| print "#{i} => #{item}" }
-puts "\n\n\n"
+puts "arr.my_each_with_index #=> \n\n"
+arr.my_each_with_index { |item, i| puts "index #{i}: #{item}\n\n" }
+puts "\n\n"
 
 puts "my_select tests\n\n"
 puts 'Print from the array all the selected items(ie: even) defined in the bloc'
