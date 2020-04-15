@@ -107,3 +107,28 @@ puts "Given the array digits = [2,4,5]\n\n"
 digits = [2, 4, 5]
 multiply = multiply_els(digits)
 puts "multiply_els(digits) #=> #{multiply}\n\n"
+
+puts [1, 5, 2].each
+puts [1, 5, 2].my_each
+puts [1, 5, 2].each_with_index
+puts [1, 5, 2].my_each_with_index
+puts [1, 5, 2].select
+puts [1, 5, 2].my_select
+puts [1, 5, 2].all?
+puts [1, 5, 2].my_all?
+puts [1, 5, 2].any?
+puts [1, 5, 2].my_any?
+puts [1, 5, 2].none?
+puts [1, 5, 2].my_none?
+puts [1, 5, 2].count
+puts [1, 5, 2].my_count
+puts [1, 5, 2].map
+puts [1, 5, 2].my_map
+
+my_proc = proc { |num| num > 10 }
+print 'bloc and proc given as argument #=> '
+puts [18, 22, 5, 6].my_map(my_proc) { |num| num < 10 }.inspect
+
+puts [1, 5, 2].my_inject
+puts [nil, false, true, []].all?
+puts [nil, false, true, []].my_all?

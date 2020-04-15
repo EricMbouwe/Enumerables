@@ -1,6 +1,6 @@
 module Enumerable
   def my_each
-    return to_enum(my_each) unless block_given?
+    return to_enum(__method__) unless block_given?
 
     i = 0
     while i < size
@@ -11,7 +11,7 @@ module Enumerable
   end
 
   def my_each_with_index
-    rreturn to_enum(my_each_with_index) unless block_given?
+    return to_enum(__method__) unless block_given?
 
     i = 0
     while i < size
@@ -22,7 +22,7 @@ module Enumerable
   end
 
   def my_select
-    return to_enum(my_select) unless block_given?
+    return to_enum(__method__) unless block_given?
 
     result = []
     my_each do |item|
@@ -37,7 +37,7 @@ module Enumerable
       if block_given?
         result = false unless yield(value)
       elsif param.nil?
-        result = true unless value
+        result = false unless value
       else
         result = false unless param === value
       end
@@ -92,7 +92,7 @@ module Enumerable
 
     arr = []
     my_each do |item|
-      if param
+      if param && block_given?
         a = param.call(item)
         return arr << a
       else
@@ -119,7 +119,7 @@ module Enumerable
       end
       accumulator
     else
-      to_enum(my_inject)
+      to_enum(__method__)
     end
   end
 end
