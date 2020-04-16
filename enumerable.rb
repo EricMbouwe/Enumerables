@@ -94,7 +94,7 @@ module Enumerable
     my_each do |item|
       if param
         a = param.call(item)
-        block_given? ? arr << a : arr << a
+        block_given? ? arr << a : arr
       else
         arr << yield(item)
       end
