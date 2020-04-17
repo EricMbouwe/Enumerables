@@ -90,8 +90,13 @@ puts "Given a proc bob = { |x| x+5 }\n\n"
 bob = proc { |x| x + 5 }
 map_p = (1..4).my_map(&bob)
 puts "(1..4).my_map(&bob) #=> #{map_p}\n\n"
+my_proc = proc { |num| num > 10 }
+puts "Both bloc and proc given as argument\n\n"
+puts "my_proc = proc { |num| num > 10 }\n\n"
+print "[18, 22, 5, 6].my_map(my_proc) { |num| num < 10 } #=> "
+puts [18, 22, 5, 6].my_map(my_proc) { |num| num < 10 }.inspect
 
-puts "\nmy_inject tests\n"
+puts "\n\nmy_inject tests\n"
 puts "\nGiven the array (5..10)\n\n"
 inject = (5..10).my_inject(1, :*)
 inject_s = (5..10).my_inject(:+)
@@ -124,10 +129,6 @@ puts [1, 5, 2].count
 puts [1, 5, 2].my_count
 puts [1, 5, 2].map
 puts [1, 5, 2].my_map
-
-my_proc = proc { |num| num > 10 }
-print 'bloc and proc given as argument #=> '
-puts [18, 22, 5, 6].my_map(my_proc) { |num| num < 10 }.inspect
 
 puts [1, 5, 2].my_inject
 puts [nil, false, true, []].all?
