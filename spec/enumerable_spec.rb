@@ -16,7 +16,10 @@ describe 'Enumerable' do
     let(:arr) { [1, 8, 6, 2] }
 
     it 'should return the array element with their index' do
-      expect(arr.my_each_with_index { |x, i| puts }).to eql([0, 1, 2, 3])
+      expect(arr.my_each_with_index { |x, _i| x }).to eql([1, 8, 6, 2])
+    end
+    it 'should return the array element with their index' do
+      expect(arr.my_each_with_index { |_x, i| i }).to eql([1, 8, 6, 2])
     end
   end
 
