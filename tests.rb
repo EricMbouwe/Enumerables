@@ -93,7 +93,7 @@ puts "(1..4).my_map(&bob) #=> #{map_p}\n\n"
 my_proc = proc { |num| num > 10 }
 puts "Both bloc and proc given as argument\n\n"
 puts "my_proc = proc { |num| num > 10 }\n\n"
-print "[18, 22, 5, 6].my_map(my_proc) { |num| num < 10 } #=> "
+print '[18, 22, 5, 6].my_map(my_proc) { |num| num < 10 } #=> '
 puts [18, 22, 5, 6].my_map(my_proc) { |num| num < 10 }.inspect
 
 puts "\n\nmy_inject tests\n"
